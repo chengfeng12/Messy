@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "target": "es3",
-        "outDir": "./dist",
-        "strictNullChecks": true,
-        "noImplicitAny": true,
-    },
-    "include": ["./src/**/*"]
-}
