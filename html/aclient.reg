@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\aClient]
+@="aClientProtocol"
+"URL Protocol"=""
+ 
+[HKEY_CLASSES_ROOT\aClient\DefaultIcon]
+@="C:\\Users\\Administrator\\AppData\\Local\\kingsoft\\WPS Office\\ksolaunch.exe,1" 
+
+[HKEY_CLASSES_ROOT\aClient\shell]
+@="" 
+
+[HKEY_CLASSES_ROOT\aClient\shell\open]
+@=""
+
+[HKEY_CLASSES_ROOT\aClient\shell\open\command]
+@="\"C:\\Users\\Administrator\\AppData\\Local\\kingsoft\\WPS Office\\ksolaunch.exe\" \"%1\""

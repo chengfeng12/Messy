@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="names"></canvas>
+</body>
+<script>
+// 填充字体样式
+let font = 120
+let ctx = document.querySelector('#names').getContext("2d");
+ctx.font = font + "px '微软雅黑'"
+ctx.fillStyle = "#000001"
+// 内容
+let text = '小丞同学'
+// 获取字体的宽度
+let textWidth = ctx.measureText(text).width
+// 在左上角填充字体
+ctx.fillText(text,0 , font)
+let imgData = ctx.getImageData(0, 0, textWidth, font * 1.2)
+
+for (let h = 0; h < font * 1.2; h += 6) {
+    for (let w = 0; w < textWidth; w += 6) {
+        let position = (textWidth * h + w) * 4;
+        // 返回的数组是rgba的方式存储
+        let r = imgData.data[position],
+            g = imgData.data[position + 1],
+            b = imgData.data[position + 2],
+            a = imgData.data[position + 3];
+        if (r + g + b == 0) {
+            continue
+        }
+        let x = 1,
+            y = 1;
+        //烟花代码
+        let firework = {};
+        firework.x = x;
+        firework.y = y;
+        firework.fx = x + w - textWidth / 2;
+        firework.fy = y + h - font / 2;
+        firework.size = Math.floor(Math.random() * 2) + 1;
+        firework.speed = 1;
+        setColors(firework);
+        fireworks.push(firework);
+
+
+        firework.x += (firework.fx - firework.x) / 10;
+        firework.y += (firework.fy - firework.y) / 10 - (firework.alpha - 1) * firework.speed;
+        firework.alpha -= 0.01;
+        // 如果透明度小于0就删除这个粒子
+        if (firework.alpha <= 0) {
+            fireworks.splice(i, 1);
+            // 跳过这次循环，不进行绘制
+            continue;
+        }
+    }
+}
+
+
+
+function tick() {
+    // // 设置拖影
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillStyle = 'rgba(0,0,0,' + 10 / 100 + ')';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.globalCompositeOperation = 'lighter';
+    // 更新画布
+    drawFires();
+    requestAnimationFrame(tick);
+}
+
+</script>
+</html>

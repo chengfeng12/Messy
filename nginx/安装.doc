@@ -1,0 +1,19 @@
+1. 安装相关依赖 pcre
+  安装在 /usr/src 目录下
+　解压文件
+tar -xvf pcre2-10.39.tar.gz
+进入到 pcre 文件夹中
+执行  ./configure
+make && make install
+
+
+2.安装其他依赖
+　　　yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel
+3.安装 nginx
+　　　
+4. 启动 nginx
+　　　
+　　　
+4.firewall-cmd --list-all 查看开放的端口
+5.firewall-cmd --add-service=http --permanent
+	firewall-cmd --add-port=端口/tcp --permanent

@@ -1,0 +1,27 @@
+<style lang="less">
+</style>
+
+<script>
+import wepy from '@wepy/core'
+import demo from '@wepy/demo'
+
+wepy.app({
+  onLaunch() {
+    console.log('on launch')
+  }
+});
+</script>
+<config>
+{
+    pages: [
+      'pages/index',
+      'pages/demo
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    }
+  }
+</config>

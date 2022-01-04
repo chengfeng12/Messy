@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: #35dad2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+        margin: 30px;
+        position: relative;
+    }
+</style>
+<body>
+    <div class="block">
+
+    </div>
+</body>
+<script src="./anime.min.js"></script>
+<script>
+    const block = document.querySelector('.block');
+    block.style.transform = 'translateX(100px) rotateZ(100deg)';
+    anime({
+        targets: block,
+        translateX: {
+            value: '*=2.5',
+            duration: 1000,
+            endDelay: 2200,
+        },
+        width: {
+            value: '-=85',
+            delay: 1000,
+            easing: 'easeInOutSine'
+        },
+        rotateZ: {
+            value: '*=10',
+            delay: 1000,
+            easing: 'easeInOutSine'
+        },
+        borderRadius: {
+            value: ['0%', '50%'],
+            duration: 1000,
+            endDelay: 2200,
+        },
+        backgroundColor: [
+            { value: "#5F9EA0", duration: 700 },
+            { value: "#3A5FCD", duration: 300, delay: 1000}
+        ],
+        duration: 1800,
+        loop: true,
+        // direction: 'alternate'
+    });
+    let num = 7000;
+    let count = ''
+    for (let index = 0; index < 240; index++) {
+        num = num + (num - 12.7)
+        // console.log()
+    }
+    console.log(num, '远')
+</script>
+</html>

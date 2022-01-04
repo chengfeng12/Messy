@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <script>
+        var w = new ActiveXObject('Word.Application');
+        var docText;
+        var obj;
+        if(w != null) {
+            w.Visible = true;
+            obj = w.Documents.Open("‪C:\\Users\\Administrator\\Desktop\\涉密信息系统集成资质保密知识测试题及答案.doc");
+            docText = obj.Content;
+            w.Selection.TypeText("Hello");
+            w.Documents.Save();
+            document.write(docText);//Print on webpage
+            /*The Above Code Opens existing Document
+             set w.Visible=false
+             */
+            /*Below code will create doc file and add data to it and will close*/
+            w.Documents.Add();
+            w.Selection.TypeText("Writing This Message ....");
+            w.Documents.Save("‪C:\\Users\\Administrator\\Desktop\\涉密信息系统集成资质保密知识测试题及答案.doc");
+            w.Quit();
+            /*Don't forget
+             set w.Visible=false */
+        }
+    </script> -->
+</head>
+<body>
+  <!-- <a href="aClient://C:\\Users\\Administrator\\Desktop\\html\\123.doc">打开程序</a> -->
+  <a href="files://C:\\Users\\Administrator\\AppData\\Local\\kingsoft\\WPS Office\\ksolaunch.exe">打开程序</a>
+  <a href="./pdf.doc" download="./pdf.doc" >下载文件</a>
+</body>
+</html>
