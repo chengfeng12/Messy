@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        --fill-color: #198CE6;
+        position: relative;
+        display: block;
+        padding: 4px 0;
+        font-family: Raleway, sans-serif;
+        font-size: 3em;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-text-stroke: 2px var(--fill-color);
+        /* background: #CE6; */
+        background: linear-gradient(90deg, #CE6 0%,#CE6 100%);
+        background-size: 0;
+        background-position: left;
+        background-repeat: no-repeat;
+        color: transparent;
+        background-clip: text;
+        transition: 0.5s linear;
+    }
+    p:hover {
+        background-size: 100%;
+    }
+</style>
+<body>
+    <p>123</p>
+</body>
+</html>

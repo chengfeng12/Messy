@@ -1,0 +1,251 @@
+// @import url(https://fonts.googleapis.com/css?family=Lato);
+
+// body {
+//   display: flex;
+//   height: 100vh;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+//   background: #1A1E23;
+// }
+
+// .btn {
+//   --hue: 190;
+//   --ease-in-duration: 0.25s;
+//   --ease-in-exponential: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+//   --ease-out-duration: 0.65s;
+//   --ease-out-delay: var(--ease-in-duration);
+//   --ease-out-exponential: cubic-bezier(0.19, 1, 0.22, 1);
+//   position: relative;
+//   padding: 1rem 3rem;
+//   font-size: 1rem;
+//   line-height: 1.5;
+//   color: white;
+//   text-decoration: none;
+//   background-color: hsl(var(--hue), 100%, 41%);
+//   border: 1px solid hsl(var(--hue), 100%, 41%);
+//   outline: transparent;
+//   overflow: hidden;
+//   cursor: pointer;
+//   user-select: none;
+//   white-space: nowrap;
+//   transition: 0.25s;
+
+//   &:hover {
+//     background: hsl(var(--hue), 100%, 31%);
+//   }
+
+//   &-primary {
+//     --hue: 171;
+//   }
+
+//   &-ghost {
+//     color: hsl(var(--hue), 100%, 41%);
+//     background-color: transparent;
+//     border-color: hsl(var(--hue), 100%, 41%);
+
+//     &:hover {
+//       color: white;
+//     }
+//   }
+
+//   &-border-stroke {
+//     border-color: hsla(var(--hue), 100%, 41%, 0.35);
+
+//     .btn-borders {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+
+//       .border-top {
+//         position: absolute;
+//         top: 0;
+//         width: 100%;
+//         height: 1px;
+//         background: hsl(var(--hue), 100%, 41%);
+//         transform: scaleX(0);
+//         transform-origin: left;
+//       }
+
+//       .border-right {
+//         position: absolute;
+//         right: 0;
+//         width: 1px;
+//         height: 100%;
+//         background: hsl(var(--hue), 100%, 41%);
+//         transform: scaleY(0);
+//         transform-origin: bottom;
+//       }
+
+//       .border-bottom {
+//         position: absolute;
+//         bottom: 0;
+//         width: 100%;
+//         height: 1px;
+//         background: hsl(var(--hue), 100%, 41%);
+//         transform: scaleX(0);
+//         transform-origin: left;
+//       }
+
+//       .border-left {
+//         position: absolute;
+//         left: 0;
+//         width: 1px;
+//         height: 100%;
+//         background: hsl(var(--hue), 100%, 41%);
+//         transform: scaleY(0);
+//         transform-origin: bottom;
+//       }
+
+//       .border-left {
+//         transition: .5s .5s 
+//           var(--ease-out-exponential) var(--ease-out-exponential);
+//       }
+//       .border-bottom {
+//         transition: var(--ease-out-duration) var(--ease-out-delay)
+//           var(--ease-out-exponential);
+//       }
+
+//       .border-right {
+//         transition: var(--ease-in-duration) var(--ease-in-exponential);
+//       }
+//       .border-top {
+//         transition: var(--ease-in-duration) var(--ease-in-exponential);
+//       }
+//     }
+
+//     &:hover {
+//       color: hsl(var(--hue), 100%, 41%);
+//       background: transparent;
+
+//       .border-top,
+//       .border-bottom {
+//         transform: scaleX(1);
+//       }
+//       .border-left,
+//       .border-right {
+//         transform: scaleY(1);
+//       }
+
+//       // when hover, ease-in left, bottom; ease-out right, top
+
+//       .border-left {
+//         transition: var(--ease-in-duration) var(--ease-in-exponential);
+//       }
+//       .border-bottom {
+//         transition: var(--ease-in-duration) var(--ease-in-exponential);
+//       }
+
+//       .border-right {
+//         transition: var(--ease-out-duration) var(--ease-out-delay)
+//           var(--ease-out-exponential);
+//       }
+//       .border-top {
+//         transition: var(--ease-out-duration) var(--ease-out-delay)
+//           var(--ease-out-exponential);
+//       }
+//     }
+//   }
+// }
+
+body {
+    --bgc: #1A1E23;
+    --ease-in-exponential: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    --ease-out-exponential: cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--bgc);
+    button {
+        position: relative;
+        background-color: var(--bgc);
+        color: #fff;
+        padding: 10px 40px;
+        border: 1px solid rgb(31, 49, 71);
+        font-size: 20px;
+        text-align: center;
+        line-height: 40px;
+        &:hover {
+            // color: hsl(var(--bgc), 100%, 41%);
+            // background: transparent;
+            .border-top,
+            .border-bottom {
+                transform: scaleX(1);
+            }
+            .border-left,
+            .border-right {
+                transform: scaleY(1);
+            }
+        }
+    }
+    .btn-borders {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .border-top, .border-right, .border-bottom, .border-left {
+        position: absolute;
+        background-color: rgb(23, 81, 151);
+        // height: 100%!important;
+        // width: 100%!important;
+        
+    }
+    .border-top {
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.5s var(--ease-in-exponential);
+        // animation: top-bottom .5s .5s ease-in forwards;
+    }
+    .border-right {
+        bottom: 0;
+        right:0;
+        height: 100%;
+        width: 1px;
+        transform: scaleY(0);
+        transition: 0.5s var(--ease-in-exponential);
+        transform-origin: bottom;
+        // animation: left-right .5s .5s ease-in forwards;
+    }
+    .border-bottom {
+        bottom: 0;
+        left:0;
+        height: 1px;
+        width: 100%;
+        transform: scaleX(0);
+        transition: .25s .5s var(--ease-out-exponential);
+        transform-origin: left;
+        // animation: top-bottom 2 ease-in forwards;
+    }
+    .border-left {
+        bottom: 0;
+        left:0;
+        height: 100%;
+        width: 1px;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: .25s .5s var(--ease-out-exponential);
+        // animation: left-right .5s ease-in forwards;
+    }
+}
+// @keyframes top-bottom {
+//     to {
+//         opacity: 1;
+//         width: 100%;
+//     }
+// }
+// @keyframes left-right {
+//     to {
+//         opacity: 1;
+//         height: 100%;
+//     }
+// }

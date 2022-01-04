@@ -1,0 +1,381 @@
+var data = [
+    {name:"北京",value:177},
+    {name:"天津",value:42},
+    {name:"河北",value:102},
+    {name:"山西",value:81},
+    {name:"内蒙古",value:47},
+    {name:"辽宁",value:67},
+    {name:"吉林",value:82},
+    {name:"黑龙江",value:66},
+    {name:"上海",value:24},
+    {name:"江苏",value:92},
+    {name:"浙江",value:114},
+    {name:"安徽",value:109},
+    {name:"福建",value:116},
+    {name:"江西",value:91},
+    {name:"山东",value:119},
+    {name:"河南",value:137},
+    {name:"湖北",value:116},
+    {name:"湖南",value:114},
+    {name:"重庆",value:91},
+    {name:"四川",value:125},
+    {name:"贵州",value:62},
+    {name:"云南",value:83},
+    {name:"西藏",value:9},
+    {name:"陕西",value:80},
+    {name:"甘肃",value:56},
+    {name:"青海",value:10},
+    {name:"宁夏",value:18},
+    {name:"新疆",value:67},
+    {name:"广东",value:123},
+    {name:"广西",value:59},
+    {name:"海南",value:14},
+    ];
+var list = [
+          {
+              "name":"北京",
+              "value":[
+                  116.405285,
+                  39.904989,
+                  177
+              ]
+          },
+          {
+              "name":"天津",
+              "value":[
+                  117.190182,
+                  39.125596,
+                  42
+              ]
+          },
+          {
+              "name":"河北",
+              "value":[
+                  114.502461,
+                  38.045474,
+                  102
+              ]
+          },
+          {
+              "name":"山西",
+              "value":[
+                  112.549248,
+                  37.857014,
+                  81
+              ]
+          },
+          {
+              "name":"内蒙古",
+              "value":[
+                  111.670801,
+                  40.818311,
+                  47
+              ]
+          },
+          {
+              "name":"辽宁",
+              "value":[
+                  123.429096,
+                  41.796767,
+                  67
+              ]
+          },
+          {
+              "name":"吉林",
+              "value":[
+                  125.3245,
+                  43.886841,
+                  82
+              ]
+          },
+          {
+              "name":"黑龙江",
+              "value":[
+                  126.642464,
+                  45.756967,
+                  66
+              ]
+          },
+          {
+              "name":"上海",
+              "value":[
+                  121.472644,
+                  31.231706,
+                  24
+              ]
+          },
+          {
+              "name":"江苏",
+              "value":[
+                  118.767413,
+                  32.041544,
+                  92
+              ]
+          },
+          {
+              "name":"浙江",
+              "value":[
+                  120.153576,
+                  30.287459,
+                  114
+              ]
+          },
+          {
+              "name":"安徽",
+              "value":[
+                  117.283042,
+                  31.86119,
+                  109
+              ]
+          },
+          {
+              "name":"福建",
+              "value":[
+                  119.306239,
+                  26.075302,
+                  116
+              ]
+          },
+          {
+              "name":"江西",
+              "value":[
+                  115.892151,
+                  28.676493,
+                  91
+              ]
+          },
+          {
+              "name":"山东",
+              "value":[
+                  117.000923,
+                  36.675807,
+                  119
+              ]
+          },
+          {
+              "name":"河南",
+              "value":[
+                  113.665412,
+                  34.757975,
+                  137
+              ]
+          },
+          {
+              "name":"湖北",
+              "value":[
+                  114.298572,
+                  30.584355,
+                  116
+              ]
+          },
+          {
+              "name":"湖南",
+              "value":[
+                  112.982279,
+                  28.19409,
+                  114
+              ]
+          },
+          {
+              "name":"重庆",
+              "value":[
+                  106.504962,
+                  29.533155,
+                  91
+              ]
+          },
+          {
+              "name":"四川",
+              "value":[
+                  104.065735,
+                  30.659462,
+                  125
+              ]
+          },
+          {
+              "name":"贵州",
+              "value":[
+                  106.713478,
+                  26.578343,
+                  62
+              ]
+          },
+          {
+              "name":"云南",
+              "value":[
+                  102.712251,
+                  25.040609,
+                  83
+              ]
+          },
+          {
+              "name":"西藏",
+              "value":[
+                  91.132212,
+                  29.660361,
+                  9
+              ]
+          },
+          {
+              "name":"陕西",
+              "value":[
+                  108.948024,
+                  34.263161,
+                  80
+              ]
+          },
+          {
+              "name":"甘肃",
+              "value":[
+                  103.823557,
+                  36.058039,
+                  56
+              ]
+          },
+          {
+              "name":"青海",
+              "value":[
+                  101.778916,
+                  36.623178,
+                  10
+              ]
+          },
+          {
+              "name":"宁夏",
+              "value":[
+                  106.278179,
+                  38.46637,
+                  18
+              ]
+          },
+          {
+              "name":"新疆",
+              "value":[
+                  87.617733,
+                  43.792818,
+                  67
+              ]
+          },
+          {
+              "name":"广东",
+              "value":[
+                  113.280637,
+                  23.125178,
+                  123
+              ]
+          },
+          {
+              "name":"广西",
+              "value":[
+                  108.320004,
+                  22.82402,
+                  59
+              ]
+          },
+          {
+              "name":"海南",
+              "value":[
+                  110.33119,
+                  20.031971,
+                  14
+              ]
+          }
+      ]
+
+option =  {
+          visualMap: {
+              show: true,
+              min: 0,
+              max: 200,
+              left: 'left',
+              top: 'bottom',
+              text: ['高', '低'], // 文本，默认为数值文本
+              calculable: true,
+            //   seriesIndex: [1],
+              inRange: {
+                  color: ['#E2EBFC', '#417FF2'] // 蓝绿
+              }
+          },
+          geo: {
+              show: true,
+              map: "china",
+              roam: false,
+              label: {
+                  normal: {
+                      show: false
+                  },
+                  emphasis: {
+                      show: false,
+                  }
+              },
+              itemStyle: {
+                  normal: {
+                    borderColor: "#4688FF",
+                    borderWidth: 3,
+                  },
+                  emphasis: {
+                    areaColor: '#000',
+                  }
+              }
+          },
+          series: [
+              {
+                name: '散点',
+                type: 'scatter',
+                coordinateSystem: 'geo',
+                data: list,
+                z: 2,
+                symbolSize: function(val) {
+                    return val[2] / 10;
+                },
+                label: {
+                    normal: {
+                        color: '#333333',
+                        formatter: '{b}',
+                        position: 'bottom',
+                        show: true
+                    },
+                    emphasis: {}
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#FFB300',
+                    }
+                }
+            },
+            {
+                name: '地图',
+                type: 'map',
+                map: 'china',
+                roam: false,
+                // geoIndex: 0,
+                aspectScale: 0.75, //长宽比
+                showLegendSymbol: false, // 存在legend时显示
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: false,
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        borderWidth: 1, //设置外层边框
+                        borderColor: '#7DABFF',
+                    },
+                    emphasis: {
+                        borderWidth: 1, //设置外层边框
+                        borderColor: '#7DABFF',
+                    }
+                },
+                animation: false,
+                data: data
+            },
+            
+          ]
+      };
+myChart.setOption(option);

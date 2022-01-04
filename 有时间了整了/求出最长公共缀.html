@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // let text = ["flowerwight", "flowigh", "flifhtwigh"];
+  let text = ["fflow-abc", "fflow-ac", "fflig-abc"];
+  // let text = ["flower","flow","flight"];
+  
+  /* let arr0 = text[0],
+      arr1 = text[1],
+      arr2 = text[2];
+  let maxLength = null,
+      resultText = "";
+  if (arr0.length > arr1.length) {
+    if (arr0.length >= arr2.length) {
+      maxLength = arr0
+    }
+  } else if (arr1.length >= arr2.length) {
+    maxLength = arr1
+  } else {
+    maxLength = arr2
+  } */
+  // 自己
+  /* let maxLength = text.filter(item => item.length === Math.min(...text.map(item => item.length)))[0],
+        resultText = "",
+        startIndex = 0,
+        endIndex = 0;
+  for (let index = 0; index < maxLength.length; index++) {
+    endIndex = index + 1;
+    let temp = maxLength.substring(startIndex, endIndex);
+
+    if (text[0].includes(temp) && text[1].includes(temp) && text[2].includes(temp)) {
+      if (resultText.length < temp.length) resultText = temp
+    } else if (startIndex < maxLength.length) {
+        startIndex += 1;
+        index = startIndex - 1;
+    }
+  }
+  console.log(resultText, "resultText") */
+  
+
+  // 翟怡龙
+  /* var longestCommonPrefix = function (strs) {
+    const minStr = strs.filter(item => item.length === Math.min(...strs.map(item => item.length)))[0].split('')
+    if (minStr.length === 0) {
+        return ''
+    }
+    let result = Array.from({length: minStr.length}, () => '');
+    let nowIndex = 0
+    minStr.forEach(s => {
+        let str = result[nowIndex] + s
+        if (!strs.every(item => item.includes(str)))  ++nowIndex
+        else result[nowIndex] = str
+    })
+    return result.filter(item => item.length === Math.max(...result.map(item => item.length)))[0]
+  };
+  let a = longestCommonPrefix(text)
+  console.log(a) */
+
+  // 孙金通
+  // let arr = ['fflow-abc', 'fflow-ac', 'fflig-abc']
+  let testStr = '', commonStr = '', commonRsult;
+  mapStr(text.filter(item => item.length === Math.min(...text.map(item => item.length)))[0])
+  console.log(commonStr)
+
+  function mapStr(val) {
+      testStr = ''
+      for(let i = 0; i < val.length; i++) {
+          testStr += val[i]
+          test(testStr)
+          if(i === val.length - 1 && val.length) {
+              mapStr(val.substring(1, val.length))
+          }
+      }
+  }
+
+  function test(str) {
+      commonRsult = true
+      text.map(item =>{
+          if(!(item.indexOf(str) >= 0 && str.length >= commonStr.length)) {
+              commonRsult = false
+          }
+      })
+      if(commonRsult) commonStr = str
+  }
+
+
+
+</script>
+</html>
